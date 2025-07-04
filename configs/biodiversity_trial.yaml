@@ -1,0 +1,142 @@
+testname: Biodiversity Audio Quality Assessment
+testId: biodiversity_comparison
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+pages:
+    - type: generic
+      id: welcome_page
+      name: Welcome
+      content: Welcome to the Soundscape Biodiversity Pre-Test.<br/>In this experiment, you will evaluate audio recordings with varying biodiversity levels.<br/>Your task is to compare each recording to a reference stimulus and identify which is most similar.<br/>For optimal results, please use headphones, adjust the volume with the first stimulus, and ensure you are in a quiet environment.
+      
+    - type: generic
+      id: instructions_page
+      name: Instructions
+      content: You will hear a reference audio recording followed by two/three test stimuli.<br/><br/>Please rate the perceived audio quality of each stimulus compared to the reference on a scale from 0 to 100.<br/><br/>100 = Identical to reference<br/><br/>0 = Very different from reference<br/><br/>Use the entire scale and trust your perception
+      
+    - type: mushra
+      id: biodiversity_trial_1
+      name: Biodiversity Comparison Trial 1
+      content: Reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference and rate their perceived similarity in terms of audio quality.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/reference_biodiversity_12s.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/stimulus_1_12s.wav
+          Stimulus_B: configs/resources/audio/stimulus_2_12s.wav
+          Stimulus_C: configs/resources/audio/stimulus_3_12s.wav
+          
+    - type: mushra
+      id: biodiversity_trial_2
+      name: Biodiversity Comparison Trial 2 - Low Level
+      content: Reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/trial2_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/trial2_s1.wav
+          Stimulus_B: configs/resources/audio/trial2_s2.wav
+          Stimulus_C: configs/resources/audio/trial2_s3.wav
+          
+    - type: mushra
+      id: biodiversity_trial_3
+      name: Biodiversity Comparison Trial 3 - High Level
+      content: Reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/trial3_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/trial3_s1.wav
+          Stimulus_B: configs/resources/audio/trial3_s2.wav
+          
+    - type: mushra
+      id: biodiversity_trial_4
+      name: Biodiversity Comparison Trial 4 - Medium Level
+      content: Reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/trial4_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/trial4_s1.wav
+          Stimulus_B: configs/resources/audio/trial4_s2.wav
+          Stimulus_C: configs/resources/audio/trial4_s3.wav
+          
+    - type: mushra
+      id: biodiversity_trial_5
+      name: Biodiversity Comparison Trial 5 - High Level
+      content: Reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/trial5_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/trial5_s1.wav
+          Stimulus_B: configs/resources/audio/trial5_s2.wav
+          
+    - type: mushra
+      id: biodiversity_trial_6
+      name: Biodiversity Comparison Trial 6 - Low Level
+      content: Reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/trial6_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/trial6_s1.wav
+          Stimulus_B: configs/resources/audio/trial6_s2.wav
+          Stimulus_C: configs/resources/audio/trial6_s3.wav
+          
+    - type: mushra
+      id: biodiversity_trial_7
+      name: Biodiversity Comparison Trial 7 - Medium Level
+      content: Reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/trial7_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/trial7_s1.wav
+          Stimulus_B: configs/resources/audio/trial7_s2.wav
+          Stimulus_C: configs/resources/audio/trial7_s3.wav
+          
+    - type: finish
+      name: Thank you
+      content: Thank you for participating in this biodiversity audio assessment!
+      showResults: true
+      writeResults: true
+      questionnaire:
+          - type: text
+            label: Participant ID
+            name: participant_id
+          - type: number
+            label: Age
+            name: age
+            min: 18
+            max: 100
+            default: 25
+          - type: likert
+            name: audio_experience
+            label: Audio Experience Level
+            response:
+             - value: beginner
+               label: Beginner
+             - value: intermediate
+               label: Intermediate
+             - value: expert
+               label: Expert
+          - type: text
+            label: Comments (optional)
+            name: comments
