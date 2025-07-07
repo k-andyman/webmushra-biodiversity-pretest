@@ -119,7 +119,7 @@ pages:
       writeResults: true
       questionnaire:
           - type: text
-            label: Participant ID
+            label: Participant ID (Last letter of your name + First letter of your mom's name + Last letter of your father's name + Last digit of the year you were born)
             name: participant_id
           - type: number
             label: Age
