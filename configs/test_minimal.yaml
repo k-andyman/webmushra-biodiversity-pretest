@@ -1,0 +1,31 @@
+testname: Minimal Test
+testId: minimal_test
+bufferSize: 2048
+stopOnErrors: false
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+pages:
+    - type: generic
+      id: welcome_page
+      name: Welcome
+      content: Minimal test to check audio files
+      
+    - type: mushra
+      id: test_trial
+      name: Audio Test
+      content: Testing audio file compatibility
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/reference_biodiversity_12s.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          Stimulus_A: configs/resources/audio/stimulus_1_12s.wav
+          Stimulus_B: configs/resources/audio/stimulus_2_12s.wav
+          
+    - type: finish
+      name: Done
+      content: Test complete
+      showResults: true
+      writeResults: false
