@@ -126,9 +126,9 @@ pages:
           
     - type: finish
       name: Thank you
-      content: Thank you for participating in this biodiversity audio assessment!
+      content: Thank you for participating in this biodiversity audio assessment!<br/><br/>Please submit your results using the form below:<br/><br/><iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br/><br/>Alternative: <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" target="_blank">Open form in new window</a>
       showResults: true
-      writeResults: true
+      writeResults: false
       questionnaire:
           - type: text
             label: Participant ID (Last letter of your name + First letter of your mom's name + Last letter of your father's name + Last digit of the year you were born)
