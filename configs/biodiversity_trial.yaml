@@ -1,4 +1,4 @@
-testname: Biodiversity Audio Quality Assessment
+testname: Biodiversity Level Assessment
 testId: biodiversity_comparison
 bufferSize: 2048
 stopOnErrors: true
@@ -9,17 +9,17 @@ pages:
     - type: generic
       id: welcome_page
       name: Welcome
-      content: Welcome to the Soundscape Biodiversity Pre-Test.<br/>In this experiment, you will evaluate audio recordings with varying biodiversity levels.<br/>Your task is to compare each recording to a reference stimulus and identify which is most similar.<br/>For optimal results, please use headphones, adjust the volume with the first stimulus, and ensure you are in a quiet environment.
+      content: Welcome to the Soundscape Biodiversity Level Pre-Test.<br/>In this experiment, you will listen audio field recordings with varying biodiversity levels.<br/> Biodiversity refers to the variety of living species—such as birds, insects, and other animals—within a natural environment. A soundscape with higher biodiversity will feature a richer and more varied mix of natural sounds.<br/>Your task is to compare each recording to a reference sound and identify which one is most similar in its level of biodiversity.<br/>For optimal results, please use headphones, adjust the volume with the first stimulus, and ensure you are in a quiet environment.
       
     - type: generic
       id: instructions_page
       name: Instructions
-      content: You will hear a reference audio recording followed by two/three test stimuli.<br/><br/>Please rate the perceived audio quality of each stimulus compared to the reference on a scale from 0 to 100.<br/><br/>100 = Identical to reference<br/><br/>0 = Very different from reference<br/><br/>Use the entire scale and trust your perception
+      content: You will hear a reference audio recording followed by some test stimuli.<br/><br/>Please rate the perceived level of biodiversity of each stimulus compared to the reference on a scale from 0 to 100.<br/><br/>100 = Identical to reference (same amount of species) <br/><br/>0 = Very different from reference (totally different amount of species) <br/><br/>Use the entire scale and trust your perception
       
     - type: mushra
       id: biodiversity_trial_1
-      name: Biodiversity Comparison Trial 1
-      content: Reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference and rate their perceived similarity in terms of audio quality.
+      name: Biodiversity Level Comparison
+      content: This reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference and rate their perceived similarity in terms of level of biodiversity.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/reference_biodiversity_12s.wav
@@ -33,7 +33,7 @@ pages:
     - type: mushra
       id: biodiversity_trial_2
       name: Biodiversity Comparison Trial 2 - Low Level
-      content: Reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
+      content: This reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/trial2_ref.wav
@@ -47,7 +47,7 @@ pages:
     - type: mushra
       id: biodiversity_trial_3
       name: Biodiversity Comparison Trial 3 - High Level
-      content: Reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
+      content: This reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/trial3_ref.wav
@@ -60,7 +60,7 @@ pages:
     - type: mushra
       id: biodiversity_trial_4
       name: Biodiversity Comparison Trial 4 - Medium Level
-      content: Reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
+      content: This reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/trial4_ref.wav
@@ -74,7 +74,7 @@ pages:
     - type: mushra
       id: biodiversity_trial_5
       name: Biodiversity Comparison Trial 5 - High Level
-      content: Reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
+      content: This reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/trial5_ref.wav
@@ -87,7 +87,7 @@ pages:
     - type: mushra
       id: biodiversity_trial_6
       name: Biodiversity Comparison Trial 6 - Low Level
-      content: Reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
+      content: This reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/trial6_ref.wav
@@ -101,7 +101,7 @@ pages:
     - type: mushra
       id: biodiversity_trial_7
       name: Biodiversity Comparison Trial 7 - Medium Level
-      content: Reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
+      content: This reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/trial7_ref.wav
@@ -128,15 +128,22 @@ pages:
             max: 100
             default: 25
           - type: likert
-            name: audio_experience
-            label: Audio Experience Level
+            name: time_nature
+            label: How often are you in nature
             response:
-             - value: beginner
-               label: Beginner
-             - value: intermediate
-               label: Intermediate
-             - value: expert
-               label: Expert
+             - value: daily
+               label: daily
+             - value: weekly
+               label: weekly
+             - value: monthly
+               label: monthly
+             - value: yearly
+               label: yearly
+             - value: rare
+               label: rare
+             - value: never
+               label: never
+
           - type: text
-            label: Comments (optional)
+            label: Comments 
             name: comments
