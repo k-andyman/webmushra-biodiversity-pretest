@@ -27,6 +27,7 @@ pages:
       content: This reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference and rate their perceived similarity in terms of level of biodiversity.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/reference_biodiversity_12s.wav
       createAnchor35: false
       createAnchor70: false
@@ -41,6 +42,7 @@ pages:
       content: This reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/trial2_ref.wav
       createAnchor35: false
       createAnchor70: false
@@ -55,6 +57,7 @@ pages:
       content: This reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/trial3_ref.wav
       createAnchor35: false
       createAnchor70: false
@@ -68,6 +71,7 @@ pages:
       content: This reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/trial4_ref.wav
       createAnchor35: false
       createAnchor70: false
@@ -82,6 +86,7 @@ pages:
       content: This reference audio represents a high biodiversity level recording. Please compare the two stimuli to this reference.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/trial5_ref.wav
       createAnchor35: false
       createAnchor70: false
@@ -95,6 +100,7 @@ pages:
       content: This reference audio represents a low biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/trial6_ref.wav
       createAnchor35: false
       createAnchor70: false
@@ -109,6 +115,7 @@ pages:
       content: This reference audio represents a medium biodiversity level recording. Please compare the three stimuli to this reference.
       showWaveform: true
       enableLooping: true 
+      showReference: false  # This hides reference from conditions
       reference: configs/resources/audio/trial7_ref.wav
       createAnchor35: false
       createAnchor70: false
