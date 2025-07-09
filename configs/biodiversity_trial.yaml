@@ -12,6 +12,11 @@ pages:
       content: Welcome to the Soundscape Biodiversity Level Pre-Test.<br/>In this experiment, you will listen audio field recordings with varying biodiversity levels.<br/> Biodiversity refers to the variety of living species—such as birds, insects, and other animals—within a natural environment. A soundscape with higher biodiversity will feature a richer and more varied mix of natural sounds.<br/>Your task is to compare each recording to a reference sound and identify which one is most similar in its level of biodiversity.<br/>For optimal results, please use headphones, adjust the volume with the first stimulus, and ensure you are in a quiet environment.
       
     - type: generic
+      id: consent_page
+      name: Data Consent
+      content: <strong>Data Protection and Consent</strong><br/><br/>By participating in this study, you consent to the collection and processing of your responses for research purposes. Your participation is voluntary and you may withdraw at any time.<br/><br/>Your data will be:<br/>• Used solely for academic research purposes<br/>• Stored securely and anonymously<br/>• Handled in accordance with GDPR regulations<br/>• Not shared with third parties<br/><br/>For more information about data protection, please read our <a href="https://gdpr-info.eu/" target="_blank" rel="noopener">GDPR Privacy Policy</a>.<br/><br/><strong>Please confirm your consent:</strong><br/><input type="checkbox" id="consent" name="consent" required onchange="document.getElementById('proceedBtn').disabled = !this.checked"> <label for="consent">I have read and understood the above information and consent to participate in this research study.</label><br/><br/><button id="proceedBtn" disabled onclick="alert('Please proceed to the next page')">I Consent - Continue to Study</button>
+      
+    - type: generic
       id: instructions_page
       name: Instructions
       content: You will hear a reference audio recording followed by some test stimuli.<br/><br/>Please rate the perceived level of biodiversity of each stimulus compared to the reference on a scale from 0 to 100.<br/><br/>100 = Identical to reference (same amount of species) <br/><br/>0 = Very different from reference (totally different amount of species) <br/><br/>Use the entire scale and trust your perception
