@@ -6,41 +6,35 @@ on:
 
 jobs:
   write_results:
-    # Nur ausführen, wenn das Label "auto-results" gesetzt ist
     if: contains(join(fromJson(toJson(github.event.issue.labels)), ''), 'auto-results')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Parse CSV and TestID from Issue
         id: parse
         run: |
-          # Issue-Body enthält CSV in ```csv … ```
           body=$(jq -r .issue.body "${GITHUB_EVENT_PATH}")
           csv=$(echo "$body" \
             | sed -n '/```csv/,/```/p' \
             | sed '1d;$d')
           echo "::set-output name=csv::$csv"
-          # Title: "MUSHRA Results: <TestID>"
           title=$(jq -r .issue.title "${GITHUB_EVENT_PATH}")
           testId=${title#MUSHRA Results: }
           echo "::set-output name=testId::$testId"
 
       - name: Commit CSV to results folder
         run: |
-          mkdir -p results/${{ steps.parse.outputs.testId }}
-          echo "${{ steps.parse.outputs.csv }}" \
-            > results/${{ steps.parse.outputs.testId }}/mushra.csv
+          mkdir -p results
+          echo "${{ steps.parse.outputs.csv }}" > results/${{ steps.parse.outputs.testId }}.csv
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add results/${{ steps.parse.outputs.testId }}/mushra.csv
+          git add results/${{ steps.parse.outputs.testId }}.csv
           git commit -m "Add MUSHRA results for ${{ steps.parse.outputs.testId }}"
           git push
 
-      - name: Close the issue
-        uses: peter-evans/close-issue@v2
+      - uses: peter-evans/close-issue@v2
         with:
           issue-number: ${{ github.event.issue.number }}
           comment: "✅ Results processed and committed."
